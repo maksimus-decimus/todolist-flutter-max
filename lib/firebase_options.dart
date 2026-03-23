@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -40,52 +41,52 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyC95hgCk5TMR9xdeLzfysQ2sVMzaflENTg',
-    appId: '1:572195930055:web:62fb63827c142555f523e2',
-    messagingSenderId: '572195930055',
-    projectId: 'todolist-flutter-fb035',
-    authDomain: 'todolist-flutter-fb035.firebaseapp.com',
-    storageBucket: 'todolist-flutter-fb035.firebasestorage.app',
-    measurementId: 'G-3989LG19HP',
+  static FirebaseOptions get web => FirebaseOptions(
+    apiKey: dotenv.env['FIREBASE_WEB_API_KEY']!,
+    appId: dotenv.env['FIREBASE_WEB_APP_ID']!,
+    messagingSenderId: dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['FIREBASE_WEB_PROJECT_ID']!,
+    authDomain: dotenv.env['FIREBASE_WEB_AUTH_DOMAIN']!,
+    storageBucket: dotenv.env['FIREBASE_WEB_STORAGE_BUCKET']!,
+    measurementId: dotenv.env['FIREBASE_WEB_MEASUREMENT_ID']!,
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBxtCy27_QANCll85QGVPtaKQ9uwa-RkWI',
-    appId: '1:572195930055:android:ae289af1fc98440bf523e2',
-    messagingSenderId: '572195930055',
-    projectId: 'todolist-flutter-fb035',
-    storageBucket: 'todolist-flutter-fb035.firebasestorage.app',
+  static FirebaseOptions get android => FirebaseOptions(
+    apiKey: dotenv.env['FIREBASE_ANDROID_API_KEY']!,
+    appId: dotenv.env['FIREBASE_ANDROID_APP_ID']!,
+    messagingSenderId: dotenv.env['FIREBASE_ANDROID_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['FIREBASE_ANDROID_PROJECT_ID']!,
+    storageBucket: dotenv.env['FIREBASE_ANDROID_STORAGE_BUCKET']!,
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCC1beILzf3ppQPMTHlJf9VSkwKJEriTmw',
-    appId: '1:572195930055:ios:c95f8aeb71b70a65f523e2',
-    messagingSenderId: '572195930055',
-    projectId: 'todolist-flutter-fb035',
-    storageBucket: 'todolist-flutter-fb035.firebasestorage.app',
-    iosClientId: '572195930055-74f4p5gbaj4qmaa4snot0uv3j8218pu4.apps.googleusercontent.com',
-    iosBundleId: 'com.example.autenticacioExemple',
+  static FirebaseOptions get ios => FirebaseOptions(
+    apiKey: dotenv.env['FIREBASE_IOS_API_KEY']!,
+    appId: dotenv.env['FIREBASE_IOS_APP_ID']!,
+    messagingSenderId: dotenv.env['FIREBASE_IOS_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['FIREBASE_IOS_PROJECT_ID']!,
+    storageBucket: dotenv.env['FIREBASE_IOS_STORAGE_BUCKET']!,
+    iosClientId: dotenv.env['FIREBASE_IOS_CLIENT_ID']!,
+    iosBundleId: dotenv.env['FIREBASE_IOS_BUNDLE_ID']!,
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCC1beILzf3ppQPMTHlJf9VSkwKJEriTmw',
-    appId: '1:572195930055:ios:c95f8aeb71b70a65f523e2',
-    messagingSenderId: '572195930055',
-    projectId: 'todolist-flutter-fb035',
-    storageBucket: 'todolist-flutter-fb035.firebasestorage.app',
-    iosClientId: '572195930055-74f4p5gbaj4qmaa4snot0uv3j8218pu4.apps.googleusercontent.com',
-    iosBundleId: 'com.example.autenticacioExemple',
+  static FirebaseOptions get macos => FirebaseOptions(
+    apiKey: dotenv.env['FIREBASE_MACOS_API_KEY']!,
+    appId: dotenv.env['FIREBASE_MACOS_APP_ID']!,
+    messagingSenderId: dotenv.env['FIREBASE_MACOS_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['FIREBASE_MACOS_PROJECT_ID']!,
+    storageBucket: dotenv.env['FIREBASE_MACOS_STORAGE_BUCKET']!,
+    iosClientId: dotenv.env['FIREBASE_MACOS_IOS_CLIENT_ID']!,
+    iosBundleId: dotenv.env['FIREBASE_MACOS_IOS_BUNDLE_ID']!,
   );
 
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyC95hgCk5TMR9xdeLzfysQ2sVMzaflENTg',
-    appId: '1:572195930055:web:aa069d754f264db2f523e2',
-    messagingSenderId: '572195930055',
-    projectId: 'todolist-flutter-fb035',
-    authDomain: 'todolist-flutter-fb035.firebaseapp.com',
-    storageBucket: 'todolist-flutter-fb035.firebasestorage.app',
-    measurementId: 'G-JSX23GYYM1',
+  static FirebaseOptions get windows => FirebaseOptions(
+    apiKey: dotenv.env['FIREBASE_WINDOWS_API_KEY']!,
+    appId: dotenv.env['FIREBASE_WINDOWS_APP_ID']!,
+    messagingSenderId: dotenv.env['FIREBASE_WINDOWS_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['FIREBASE_WINDOWS_PROJECT_ID']!,
+    authDomain: dotenv.env['FIREBASE_WINDOWS_AUTH_DOMAIN']!,
+    storageBucket: dotenv.env['FIREBASE_WINDOWS_STORAGE_BUCKET']!,
+    measurementId: dotenv.env['FIREBASE_WINDOWS_MEASUREMENT_ID']!,
   );
 
 }
